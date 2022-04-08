@@ -4,32 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.DashboardFragment">
+    tools:context=".ui.CheckoutActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/FavItemsRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp"
-        android:paddingBottom="?attr/actionBarSize"
-        />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ItemsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp"
+            android:paddingBottom="?attr/actionBarSize"
+            />
     </RelativeLayout>
+
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonDel"
+        android:id="@+id/buttonPlaceOrder"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
         android:background="#007AFF"
-        android:onClick="onClearButtonClicked"
-        android:text="Checkout"
+        android:text="Place your order"
         android:textColor="#ecf0f1"
         android:textSize="20sp"
         android:textStyle="bold"

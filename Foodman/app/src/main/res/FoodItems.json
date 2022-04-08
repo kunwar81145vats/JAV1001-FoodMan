@@ -1,0 +1,91 @@
+[
+    {
+        "id": 1,
+        "name": "Margherita pizza",
+        "description": "Prepared in a wood oven to give you the best possible pizza available.",
+        "img": "margPizza.jpeg"
+    },
+    {
+        "id": 2,
+        "name": "Pepperoni pizza",
+        "description": "Prepared in a wood oven to give you the best possible pizza available.",
+        "img": "pepPizza.jpg"
+    },
+    {
+        "id": 3,
+        "name": "cheese burger",
+        "description": "A cheeseburger is a hamburger topped with cheese.",
+        "img": "burger.jpg"
+    },
+    {
+        "id": 4,
+        "name": "french fries",
+        "description": "French fries, chips, finger chips, french-fried potatoes, or simply fries, are batonnet or allumette-cut deep-fried potatoes.",
+        "img": "fries.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Coke",
+        "description": "Coca-Cola, or Coke, is a carbonated soft drink manufactured by The Coca-Cola Company.",
+        "img": "coke.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Sandwich",
+        "description": "A sandwich is a food typically consisting of vegetables, sliced cheese or meat, placed on or between slices of bread.",
+        "img": "sandwich.jpg"
+    }, {
+        "id": 8,
+        "name": "Chicken Curry",
+        "description": "Chicken curry is a dish originating from the Indian subcontinent.",
+        "img": "curry.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Chicken Wings",
+        "description": "Chicken wings are white meat, even though they're juicier and have a more concentrated poultry flavour, like dark meat.",
+        "img": "wings.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Yogurt",
+        "description": "Yogurt also spelt yoghurt, yogourt or yoghourt, is a food produced by bacterial fermentation of milk.",
+        "img": "yogurt.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Apple Pie",
+        "description": "An apple pie is a pie in which the principal filling ingredient is apples.",
+        "img": "pie.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Hotdog",
+        "description": "A hot dog is a food consisting of a grilled or steamed sausage served in the slit of a partially sliced bun.",
+        "img": "hotdog.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Popcorn",
+        "description": "Popcorn is a variety of corn kernel which expands and puffs up when heated; the same names also refer to the foodstuff produced by the expansion.",
+        "img": "popcorn.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Chicken nuggets",
+        "description": "A chicken nugget is a food product consisting of a small piece of deboned chicken meat that is breaded or battered, then deep-fried or baked.",
+        "img": "nuggets.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Barbecue chicken",
+        "description": "Barbecue chicken consists of chicken parts or entire chickens that are barbecued, grilled or smoked.",
+        "img": "barbecue.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Tacos",
+        "description": "A taco is a traditional Mexican dish consisting of small hand-sized corn or wheat tortilla topped with a filling.",
+        "img": "taco.jpg"
+    }
+]

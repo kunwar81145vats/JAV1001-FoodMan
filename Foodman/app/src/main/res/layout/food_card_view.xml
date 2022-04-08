@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:cardMaxElevation="2dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--ImageVIew to display item Image-->
+        <ImageView
+            android:id="@+id/itemImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:background="#403d40"
+            android:contentDescription="@string/app_name"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:padding="5dp" />
+
+        <!--Text View to display item Name-->
+        <TextView
+            android:id="@+id/itemName"
+            android:layout_width="187dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/itemImageView"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!--Text VIew to display COurse Rating-->
+        <TextView
+            android:id="@+id/itemDesc"
+            android:layout_width="187dp"
+            android:layout_height="53dp"
+            android:layout_below="@id/itemName"
+            android:layout_alignEnd="@+id/itemName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="-3dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/itemImageView"
+            android:drawablePadding="2dp"/>
+
+        <ImageButton
+            android:id="@+id/favButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/itemName"
+            android:src="@drawable/heart"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/updateItemButton"
+            android:layout_width="@id/itemImageView"
+            android:layout_height="30dp"
+            android:layout_below="@+id/itemImageView"
+            android:layout_alignStart="@+id/itemImageView"
+            android:layout_alignEnd="@+id/itemImageView"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="10dp"
+            android:background="#007AFF"
+            android:capitalize="none"
+            android:text="Add"
+            android:textColor="#ecf0f1"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -11,9 +11,11 @@
         android:theme="@style/Theme.Foodman">
         <activity
             android:name=".ui.SuccessActivity"
+            android:label="SUCCESS"
             android:exported="false" />
         <activity
             android:name=".ui.CheckoutActivity"
+            android:label="Checkout"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

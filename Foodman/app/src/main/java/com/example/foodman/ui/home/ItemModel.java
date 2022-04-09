@@ -1,5 +1,6 @@
 package com.example.foodman.ui.home;
 
+//Model class for food item
 public class ItemModel {
 
     public int id;

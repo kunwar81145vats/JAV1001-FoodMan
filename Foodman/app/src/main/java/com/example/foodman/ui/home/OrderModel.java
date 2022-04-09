@@ -2,6 +2,7 @@ package com.example.foodman.ui.home;
 
 import java.util.ArrayList;
 
+//Model class for orders
 public class OrderModel {
 
     public int id;

@@ -49,6 +49,7 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
     public void onBindViewHolder(@NonNull FavouritesAdapter.Viewholder holder, int position) {
         // to set data to textview and imageview of each card layout
 
+        //food rows
         if (position < itemModelArrayList.size())
         {
             ItemModel model = itemModelArrayList.get(position);
@@ -112,6 +113,7 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
                 }
             }
 
+            //Favourite button action
             holder.favButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
@@ -140,6 +142,7 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
                 }
             });
 
+            //Add/Remove button action
             holder.updateQuantityButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
@@ -188,6 +191,7 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
             holder.updateQuantityButton.setVisibility(View.VISIBLE);
             holder.itemView.setVisibility(View.VISIBLE);
         }
+        //Empty row at last to keep space for floating button
         else
         {
             holder.favButton.setVisibility(View.INVISIBLE);

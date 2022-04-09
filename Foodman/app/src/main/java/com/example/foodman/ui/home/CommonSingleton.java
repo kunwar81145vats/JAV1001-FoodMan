@@ -29,6 +29,7 @@ public class CommonSingleton {
     private CommonSingleton() {
     }
 
+    //Fetch list of food items from JSON file
     public void getJsonFromAssets(Context context, String fileName) {
 
         this.context = context;
@@ -54,6 +55,7 @@ public class CommonSingleton {
         this.getPastOrders();
     }
 
+    //Save current order in sharedPreference
     public void saveCurrentOrder()
     {
         SharedPreferences sharedPreferences = context.getSharedPreferences("preferenceFileName", 0);
@@ -64,6 +66,7 @@ public class CommonSingleton {
         sharedPreferencesEditor.apply();
     }
 
+    //Save past orders in sharedPreference
     public void savePastOrder()
     {
         SharedPreferences sharedPreferences = context.getSharedPreferences("preferenceFileName", 0);
@@ -74,6 +77,7 @@ public class CommonSingleton {
         sharedPreferencesEditor.apply();
     }
 
+    //Get current order from sharedPreference
     void getCurrentOrder()
     {
         SharedPreferences sharedPreferences = context.getSharedPreferences("preferenceFileName", 0);
@@ -83,6 +87,7 @@ public class CommonSingleton {
         }
     }
 
+    //Get current order from sharedPreference
     void getPastOrders()
     {
         SharedPreferences sharedPreferences = context.getSharedPreferences("preferenceFileName", 0);
@@ -93,6 +98,7 @@ public class CommonSingleton {
         }
     }
 
+    //Get favourites from sharedPreference
     void getFavourites()
     {
         SharedPreferences sharedPreferences = context.getSharedPreferences("preferenceFileName", 0);
@@ -103,6 +109,7 @@ public class CommonSingleton {
         }
     }
 
+    //Save favourtes in sharedPreference
     public void saveFavourites()
     {
         SharedPreferences sharedPreferences = context.getSharedPreferences("preferenceFileName", 0);
@@ -112,6 +119,4 @@ public class CommonSingleton {
         sharedPreferencesEditor.putString("favourite_items", serializedObject);
         sharedPreferencesEditor.apply();
     }
-
-
 }

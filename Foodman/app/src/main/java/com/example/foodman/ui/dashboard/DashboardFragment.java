@@ -20,6 +20,7 @@ import com.example.foodman.R;
 import com.example.foodman.databinding.FragmentDashboardBinding;
 import com.example.foodman.ui.home.CommonSingleton;
 
+//Used to show list of favourite items
 public class DashboardFragment extends Fragment implements FavouritesAdapter.FavOrderListener {
 
     private FragmentDashboardBinding binding;
@@ -53,10 +54,13 @@ public class DashboardFragment extends Fragment implements FavouritesAdapter.Fav
     @Override
     public void onResume() {
         super.onResume();
+
+        //Checkout button updated when returning to page from checkout
         updateCheckoutButton();
         homeAdapter.notifyDataSetChanged();
     }
 
+    //Method used to decide whether to display/Hide checkout button
     public void updateCheckoutButton()
     {
         if (CommonSingleton.shared().currentOrder == null)
@@ -76,6 +80,7 @@ public class DashboardFragment extends Fragment implements FavouritesAdapter.Fav
         }
     }
 
+    //Called whenever food item add/removed from list from adapter
     @Override
     public void currentOrderUpdated() {
         updateCheckoutButton();

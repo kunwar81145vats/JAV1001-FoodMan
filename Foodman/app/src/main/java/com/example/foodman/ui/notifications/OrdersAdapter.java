@@ -65,7 +65,8 @@ public class OrdersAdapter  extends RecyclerView.Adapter<OrdersAdapter.Viewholde
             public void onClick(View v) {
                 /// button click event
 
-                CommonSingleton.pastOrders.remove(position);
+                CommonSingleton.shared().pastOrders.remove(position);
+                CommonSingleton.shared().savePastOrder();
                 notifyDataSetChanged();
             }
         });

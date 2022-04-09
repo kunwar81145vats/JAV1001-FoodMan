@@ -69,7 +69,16 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
                 return;
             }
 
-            if (CommonSingleton.favItems.contains(model))
+            boolean isFav = false;
+            for (ItemModel obj : CommonSingleton.shared().favItems)
+            {
+                if (obj.id == model.id)
+                {
+                    isFav = true;
+                    break;
+                }
+            }
+            if (isFav)
             {
                 holder.favButton.setImageResource(R.drawable.fav_marked);
             }
@@ -78,13 +87,22 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
                 holder.favButton.setImageResource(R.drawable.heart);
             }
 
-            if (CommonSingleton.currentOrder == null)
+            if (CommonSingleton.shared().currentOrder == null)
             {
                 holder.updateQuantityButton.setText("Add");
             }
             else
             {
-                if (CommonSingleton.currentOrder.items.contains(model))
+                boolean found = false;
+                for (ItemModel obj : CommonSingleton.shared().currentOrder.items)
+                {
+                    if (obj.id == model.id)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found)
                 {
                     holder.updateQuantityButton.setText("Remove");
                 }
@@ -99,9 +117,9 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
                 public void onClick(View v) {
                     /// button click event
                     int itemIndex = -1;
-                    for (int i = 0; i < CommonSingleton.favItems.size(); i++)
+                    for (int i = 0; i < CommonSingleton.shared().favItems.size(); i++)
                     {
-                        if (CommonSingleton.favItems.get(i).id == model.id)
+                        if (CommonSingleton.shared().favItems.get(i).id == model.id)
                         {
                             itemIndex = i;
                             break;
@@ -110,13 +128,14 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
 
                     if (itemIndex != -1)
                     {
-                        CommonSingleton.favItems.remove(itemIndex);
+                        CommonSingleton.shared().favItems.remove(itemIndex);
                     }
                     else
                     {
-                        CommonSingleton.favItems.add(model);
+                        CommonSingleton.shared().favItems.add(model);
                     }
 
+                    CommonSingleton.shared().saveFavourites();
                     notifyDataSetChanged();
                 }
             });
@@ -127,18 +146,18 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
                     /// button click event
                     int orderId = 1;
 
-                    if (CommonSingleton.currentOrder == null)
+                    if (CommonSingleton.shared().currentOrder == null)
                     {
-                        CommonSingleton.currentOrder = new OrderModel(orderId);
-                        CommonSingleton.currentOrder.items = new ArrayList<>();
-                        CommonSingleton.currentOrder.items.add(model);
+                        CommonSingleton.shared().currentOrder = new OrderModel(orderId);
+                        CommonSingleton.shared().currentOrder.items = new ArrayList<>();
+                        CommonSingleton.shared().currentOrder.items.add(model);
                     }
                     else
                     {
                         int itemIndex = -1;
-                        for (int i = 0; i < CommonSingleton.currentOrder.items.size(); i++)
+                        for (int i = 0; i < CommonSingleton.shared().currentOrder.items.size(); i++)
                         {
-                            if (CommonSingleton.currentOrder.items.get(i).id == model.id)
+                            if (CommonSingleton.shared().currentOrder.items.get(i).id == model.id)
                             {
                                 itemIndex = i;
                                 break;
@@ -148,15 +167,15 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Vi
                         if (itemIndex == -1)
                         {
                             ItemModel item = model;
-                            item.quantity = 1;
-                            CommonSingleton.currentOrder.items.add(item);
+                            CommonSingleton.shared().currentOrder.items.add(item);
                         }
                         else
                         {
-                            CommonSingleton.currentOrder.items.remove(itemIndex);
+                            CommonSingleton.shared().currentOrder.items.remove(itemIndex);
                         }
                     }
 
+                    CommonSingleton.shared().saveCurrentOrder();
                     mListener.currentOrderUpdated();
                     notifyDataSetChanged();
                 }

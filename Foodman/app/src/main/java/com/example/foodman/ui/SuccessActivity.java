@@ -26,8 +26,10 @@ public class SuccessActivity extends AppCompatActivity {
         setContentView(R.layout.activity_success);
         getSupportActionBar().hide();
 
-        CommonSingleton.pastOrders.add(CommonSingleton.currentOrder);
-        CommonSingleton.currentOrder = null;
+        CommonSingleton.shared().pastOrders.add(CommonSingleton.shared().currentOrder);
+        CommonSingleton.shared().currentOrder = null;
+        CommonSingleton.shared().savePastOrder();
+        CommonSingleton.shared().saveCurrentOrder();
 
         closeButton = findViewById(R.id.closeButton);
         closeButton.setOnClickListener(new View.OnClickListener() {

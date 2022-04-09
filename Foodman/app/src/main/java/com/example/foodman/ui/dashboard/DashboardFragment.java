@@ -36,7 +36,7 @@ public class DashboardFragment extends Fragment implements FavouritesAdapter.Fav
         itemsRecyclerView = binding.FavItemsRecyclerView;
 
         updateCheckoutButton();
-        homeAdapter = new FavouritesAdapter(getContext(), CommonSingleton.favItems, this);
+        homeAdapter = new FavouritesAdapter(getContext(), CommonSingleton.shared().favItems, this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         itemsRecyclerView.setLayoutManager(linearLayoutManager);
         itemsRecyclerView.setAdapter(homeAdapter);
@@ -59,13 +59,13 @@ public class DashboardFragment extends Fragment implements FavouritesAdapter.Fav
 
     public void updateCheckoutButton()
     {
-        if (CommonSingleton.currentOrder == null)
+        if (CommonSingleton.shared().currentOrder == null)
         {
             checkoutButton.setVisibility(View.INVISIBLE);
         }
         else
         {
-            if(CommonSingleton.currentOrder.items.size() == 0)
+            if(CommonSingleton.shared().currentOrder.items.size() == 0)
             {
                 checkoutButton.setVisibility(View.INVISIBLE);
             }

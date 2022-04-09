@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment implements HomeAdapter.CurrentOrderLi
                 startActivity(intent);
             }
         });
-        CommonSingleton.getJsonFromAssets(getActivity().getApplicationContext(), "FoodItems.json");
+        CommonSingleton.shared().getJsonFromAssets(getActivity().getApplicationContext(), "FoodItems.json");
         RecyclerView itemsRecyclerView = binding.ItemsRecyclerView;
         updateCheckoutButton();
 
@@ -64,13 +64,13 @@ public class HomeFragment extends Fragment implements HomeAdapter.CurrentOrderLi
 
     public void updateCheckoutButton()
     {
-        if (CommonSingleton.currentOrder == null)
+        if (CommonSingleton.shared().currentOrder == null)
         {
             checkoutButton.setVisibility(View.INVISIBLE);
         }
         else
         {
-            if(CommonSingleton.currentOrder.items.size() == 0)
+            if(CommonSingleton.shared().currentOrder.items.size() == 0)
             {
                 checkoutButton.setVisibility(View.INVISIBLE);
             }

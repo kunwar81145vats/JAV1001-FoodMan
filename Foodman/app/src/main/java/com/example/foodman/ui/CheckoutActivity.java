@@ -31,7 +31,7 @@ public class CheckoutActivity extends AppCompatActivity implements CheckoutAdapt
         placeOrderButton = findViewById(R.id.buttonPlaceOrder);
         itemsRecyclerView = findViewById(R.id.ItemsRecyclerView);
 
-        CheckoutAdapter adapter = new CheckoutAdapter(this, CommonSingleton.currentOrder.items, this);
+        CheckoutAdapter adapter = new CheckoutAdapter(this, CommonSingleton.shared().currentOrder.items, this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         itemsRecyclerView.setLayoutManager(linearLayoutManager);
         itemsRecyclerView.setAdapter(adapter);
@@ -40,7 +40,7 @@ public class CheckoutActivity extends AppCompatActivity implements CheckoutAdapt
             @Override
             public void onClick(View v) {
 
-                if(CommonSingleton.currentOrder.items.size() == 0)
+                if(CommonSingleton.shared().currentOrder.items.size() == 0)
                 {
                     finish();
                 }

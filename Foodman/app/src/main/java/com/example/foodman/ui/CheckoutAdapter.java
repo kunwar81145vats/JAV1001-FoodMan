@@ -62,7 +62,7 @@ public class CheckoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if (holder instanceof FooterViewHolder)
         {
             FooterViewHolder footerHolder = (FooterViewHolder) holder;
-            String totalCount = String.valueOf(CommonSingleton.currentOrder.items.size());
+            String totalCount = String.valueOf(CommonSingleton.shared().currentOrder.items.size());
             footerHolder.footerText.setText(totalCount);
         }
         else
@@ -80,18 +80,18 @@ public class CheckoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
 
                     int itemIndex = -1;
-                    for (int i = 0; i < CommonSingleton.currentOrder.items.size(); i++)
+                    for (int i = 0; i < CommonSingleton.shared().currentOrder.items.size(); i++)
                     {
-                        if (CommonSingleton.currentOrder.items.get(i).id == model.id)
+                        if (CommonSingleton.shared().currentOrder.items.get(i).id == model.id)
                         {
                             itemIndex = i;
                             break;
                         }
                     }
 
-                    CommonSingleton.currentOrder.items.remove(itemIndex);
+                    CommonSingleton.shared().currentOrder.items.remove(itemIndex);
 
-                    if(CommonSingleton.currentOrder.items.size() == 0)
+                    if(CommonSingleton.shared().currentOrder.items.size() == 0)
                     {
                         mListener.currentOrderUpdated();
                     }

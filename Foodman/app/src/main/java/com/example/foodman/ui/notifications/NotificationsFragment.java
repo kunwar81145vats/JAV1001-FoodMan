@@ -33,7 +33,7 @@ public class NotificationsFragment extends Fragment {
 
         RecyclerView itemsRecyclerView = binding.ItemsRecyclerView;
 
-        OrdersAdapter adapter = new OrdersAdapter(getContext(), CommonSingleton.pastOrders);
+        OrdersAdapter adapter = new OrdersAdapter(getContext(), CommonSingleton.shared().pastOrders);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         itemsRecyclerView.setLayoutManager(linearLayoutManager);
         itemsRecyclerView.setAdapter(adapter);
